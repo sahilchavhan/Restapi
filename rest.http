@@ -1,0 +1,51 @@
+GET http://localhost:3000/products
+
+###create a product
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+    "name":"macbook pro 16",
+    "price":2999
+}
+
+###getting a single product
+GET http://localhost:3000/products/650ad6ead28247cb9cf67e65
+
+### updating product
+PATCH  http://localhost:3000/products/650ad6ead28247cb9cf67e65
+Content-Type: application/json
+
+{
+    "name":"macbook air 16",
+    "price":4999
+}
+
+### deleting your product
+DELETE http://localhost:3000/products/65043883dfd3e4f9042c8d3e
+
+
+###query string
+GET http://localhost:3000/test?name=iimac&price=2399
+
+###route parameters
+GET http://localhost:3000/test/93561871/imac
+
+###request body
+GET  http://localhost:3000/test 
+Content-Type: application/json
+
+{
+    "name":"imacpro",
+    "price":4999
+}
+
+###request body
+GET  http://localhost:3000/test 
+Content-Content-Type: application/x-www-form-urlencoded
+
+name:imac&price=3999
+
+
+###404 route not found
+GET http://localhost:3000/abc_xyz
